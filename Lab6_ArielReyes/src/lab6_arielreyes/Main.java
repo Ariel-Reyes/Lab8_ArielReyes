@@ -21,6 +21,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -37,6 +39,10 @@ public class Main extends javax.swing.JFrame {
   
     public Main() {
         initComponents();
+        
+        
+        
+        
         DefaultComboBoxModel model = (DefaultComboBoxModel) cb_genero.getModel();
         model.addElement(new genero("Comedia"));
         model.addElement(new genero("Romance"));
@@ -44,8 +50,12 @@ public class Main extends javax.swing.JFrame {
         model.addElement(new genero("SyFy"));
         model.addElement(new genero("Suspenso Accion"));
       cb_genero.setModel(model);
-      cb_genero1.setModel(model);
-
+        cb_genero1.setModel(model);
+        
+        
+        String st = "";
+       // st += admi.getLista_claus();
+       
     }
 
     /**
@@ -147,10 +157,14 @@ public class Main extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
         JTree_parte = new javax.swing.JDialog();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cb_Jtree = new javax.swing.JComboBox<>();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jLabel24 = new javax.swing.JLabel();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        Eliminar_Modificar = new javax.swing.JPopupMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jLabel23 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jButton16 = new javax.swing.JButton();
@@ -832,11 +846,33 @@ public class Main extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Claudilist");
         jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jTree1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTree1MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTree1MousePressed(evt);
+            }
+        });
         jScrollPane9.setViewportView(jTree1);
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 102, 102));
         jLabel24.setText("IMPLEMENTACION DEL JTREE");
+
+        jButton17.setText("Añadir");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        jButton18.setText("Limpiar");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JTree_parteLayout = new javax.swing.GroupLayout(JTree_parte.getContentPane());
         JTree_parte.getContentPane().setLayout(JTree_parteLayout);
@@ -844,14 +880,18 @@ public class Main extends javax.swing.JFrame {
             JTree_parteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JTree_parteLayout.createSequentialGroup()
                 .addGap(280, 280, 280)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cb_Jtree, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JTree_parteLayout.createSequentialGroup()
-                .addGap(0, 202, Short.MAX_VALUE)
+                .addGap(0, 216, Short.MAX_VALUE)
                 .addGroup(JTree_parteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
-                .addGap(217, 217, 217))
+                .addGap(18, 18, 18)
+                .addComponent(jButton18)
+                .addGap(120, 120, 120))
         );
         JTree_parteLayout.setVerticalGroup(
             JTree_parteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -859,11 +899,27 @@ public class Main extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGroup(JTree_parteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_Jtree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JTree_parteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JTree_parteLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(41, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JTree_parteLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton18)
+                        .addGap(24, 24, 24))))
         );
+
+        jMenuItem11.setText("Eliminar");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        Eliminar_Modificar.add(jMenuItem11);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1033,9 +1089,11 @@ public class Main extends javax.swing.JFrame {
             programas pro = new programas(nombre, puntuacion, year_lanzamiento, tipo, genero);
             DefaultComboBoxModel pelis = (DefaultComboBoxModel) jb_agregar_peli.getModel();            
             pelis.addElement(pro);
+         
             
             jb_agregar_peli.setModel(pelis);
             cb_mod.setModel(pelis);
+            cb_Jtree.setModel(pelis);
             JOptionPane.showMessageDialog(this, "Agregado Correctamente");
             jS_puntuacion.setValue(0);
             jt_nombre.setText("");
@@ -1446,7 +1504,103 @@ String ac = "";
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
         frame_tree();
+        
     }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here
+         DefaultTreeModel tree_model = (DefaultTreeModel) jTree1.getModel(); 
+            DefaultMutableTreeNode model_raiz = (DefaultMutableTreeNode) tree_model.getRoot();
+        //DefaultMutableTreeNode persona_nodo;
+       // DefaultListModel lista_model = (DefaultListModel) jl_estudiantes.getModel();
+        programas g = (programas) cb_Jtree.getSelectedItem();
+      
+
+
+           // nombre = ((estudiantes)lista_model.get(jl_estudiantes.getSelectedIndex())).getNombre();
+            
+            int centinela = -1; 
+            for (int i = 0; i < model_raiz.getChildCount(); i++) {
+                if(model_raiz.getChildAt(i).toString().equals( g.getNombre())){
+                DefaultMutableTreeNode P = new DefaultMutableTreeNode(new programas(g.getNombre(), g.getPuntuacion(), g.getYear_lanzamiento(), g.getTipo(), g.getGenero()));
+                ((DefaultMutableTreeNode) model_raiz.getChildAt(i)).add(P);
+                centinela = 1;
+            }
+        }
+        if (centinela == -1) {
+            DefaultMutableTreeNode n = new DefaultMutableTreeNode(g.getNombre());
+            DefaultMutableTreeNode p = new DefaultMutableTreeNode(new programas(g.getNombre(), g.getPuntuacion(), g.getYear_lanzamiento(), g.getTipo(), g.getGenero()));
+            n.add(p);
+            model_raiz.add(n);
+        }
+        tree_model.reload();
+
+        
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+        jTree1.removeAll();
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jTree1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTree1MousePressed
+        // TODO add your handling code here:
+ if(evt.isMetaDown()){
+       
+           if (evt.isMetaDown()) {
+               // aca capturamos la fila mas cercana a donde se hace click 
+               int row = jTree1.getClosestRowForLocation(evt.getX(), evt.getY());
+               // aca la dejamos como fila seleccionada
+                jTree1.setSelectionRow(row);
+                // sacamos el objeto 
+                Object obj = jTree1.getSelectionPath().getLastPathComponent();
+                // agarramos el nodo seleccionado que es el objeto 
+                nodo_seleccionado = (DefaultMutableTreeNode) obj;
+                // se valida que hayan clientes en el nodo 
+                if (nodo_seleccionado.getUserObject() instanceof programas) {
+                    programa_seleccionado = (programas) nodo_seleccionado.getUserObject(); // se pasa a la variable que es persona 
+                    Eliminar_Modificar.show(evt.getComponent(), evt.getX(), evt.getY()); // se muestra el menu 
+                }
+
+            }
+
+        }
+    }//GEN-LAST:event_jTree1MousePressed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        int delete = JOptionPane.showConfirmDialog(this, "Seguro de eliminar? ", "Confirm", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE); // se manda el mensaje 
+        if (delete == JOptionPane.OK_OPTION) { // se confirma la opcion 
+            DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();  // se captura el modelo 
+            model.removeNodeFromParent(nodo_seleccionado); // se remueve el modelo 
+            model.reload(); // se manda la imagen 
+        }
+
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jTree1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTree1MouseClicked
+        // TODO add your handling code here:
+                 
+       
+           if (evt.isMetaDown()) {
+               // aca capturamos la fila mas cercana a donde se hace click 
+               int row = jTree1.getClosestRowForLocation(evt.getX(), evt.getY());
+               // aca la dejamos como fila seleccionada
+               jTree1.setSelectionRow(row);
+               // sacamos el objeto 
+               Object obj = jTree1.getSelectionPath().getLastPathComponent();
+                // agarramos el nodo seleccionado que es el objeto 
+                nodo_seleccionado = (DefaultMutableTreeNode) obj;
+                // se valida que hayan clientes en el nodo 
+                if (nodo_seleccionado.getUserObject() instanceof programas) {
+                    programa_seleccionado = (programas) nodo_seleccionado.getUserObject(); // se pasa a la variable que es persona 
+                    Eliminar_Modificar.show(evt.getComponent(), evt.getX(), evt.getY()); // se muestra el menu 
+                }
+
+            }
+
+        
+    }//GEN-LAST:event_jTree1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1553,7 +1707,8 @@ String ac = "";
         JTree_parte.setVisible(true);
     }
     
-
+ DefaultMutableTreeNode nodo_seleccionado; 
+    programas programa_seleccionado; 
     
     private ArrayList<claudilist> lista_claudia = new ArrayList(); 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1561,12 +1716,14 @@ String ac = "";
     private javax.swing.JDialog ClaudiList;
     private javax.swing.JMenuItem Delete;
     private javax.swing.JMenuItem Eliminar;
+    private javax.swing.JPopupMenu Eliminar_Modificar;
     private javax.swing.JDialog Eliminare;
     private javax.swing.JDialog JTree_parte;
     private javax.swing.JPopupMenu List_cla;
     private javax.swing.JMenuItem Mod;
     private javax.swing.JDialog Modif;
     private javax.swing.JDialog abrir_archivo;
+    private javax.swing.JComboBox<String> cb_Jtree;
     private javax.swing.JComboBox<String> cb_genero;
     private javax.swing.JComboBox<String> cb_genero1;
     private javax.swing.JComboBox<String> cb_mod;
@@ -1578,6 +1735,8 @@ String ac = "";
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1586,7 +1745,6 @@ String ac = "";
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1618,6 +1776,7 @@ String ac = "";
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
