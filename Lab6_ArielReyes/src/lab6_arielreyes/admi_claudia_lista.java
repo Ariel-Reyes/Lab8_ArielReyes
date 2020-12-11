@@ -56,13 +56,15 @@ public class admi_claudia_lista {
             fw = new FileWriter(archivo, false);
             bw = new BufferedWriter(fw);
             for (claudilist c : lista_claus) {
-                bw.write(c.getNombre() + "/");
+                bw.write(c.getNombre() );
                 for (programas z : c.getProgra()) {
                     bw.write(z.getNombre() + "/");
                     bw.write(z.getGenero() + "/");
                     bw.write(z.getPuntuacion() + "/");
                     bw.write(z.getTipo() + "/");
                     bw.write(z.getYear_lanzamiento() + "/");
+                    
+
                 }
 
             }
