@@ -21,6 +21,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -165,6 +166,20 @@ public class Main extends javax.swing.JFrame {
         jButton18 = new javax.swing.JButton();
         Eliminar_Modificar = new javax.swing.JPopupMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        Tabla = new javax.swing.JDialog();
+        jLabel25 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        cb_tb_pelis = new javax.swing.JComboBox<>();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        MOD_TABLA = new javax.swing.JDialog();
+        jButton23 = new javax.swing.JButton();
+        cb_mo = new javax.swing.JComboBox<>();
+        jLabel30 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jButton16 = new javax.swing.JButton();
@@ -181,6 +196,7 @@ public class Main extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
@@ -732,7 +748,7 @@ public class Main extends javax.swing.JFrame {
         jList2.setModel(new DefaultListModel());
         jScrollPane6.setViewportView(jList2);
 
-        jButton12.setText("Agregar");
+        jButton12.setText("Modificar");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
@@ -921,6 +937,131 @@ public class Main extends javax.swing.JFrame {
         });
         Eliminar_Modificar.add(jMenuItem11);
 
+        jMenuItem12.setText("jMenuItem12");
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel25.setText("PELICULAS: ");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pelicula", "Genero", "Año", "Calificacion"
+            }
+        ));
+        jScrollPane10.setViewportView(jTable1);
+
+        jButton19.setText("Agregar");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+
+        jButton20.setText("Eliminar");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+
+        jButton21.setText("Limpiar");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+
+        jButton22.setText("Modificar");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TablaLayout = new javax.swing.GroupLayout(Tabla.getContentPane());
+        Tabla.getContentPane().setLayout(TablaLayout);
+        TablaLayout.setHorizontalGroup(
+            TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TablaLayout.createSequentialGroup()
+                .addGroup(TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TablaLayout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(jLabel25)
+                        .addGap(18, 18, 18)
+                        .addComponent(cb_tb_pelis, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TablaLayout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TablaLayout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(235, Short.MAX_VALUE))
+        );
+        TablaLayout.setVerticalGroup(
+            TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TablaLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(cb_tb_pelis, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addGroup(TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                        .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        jButton23.setText("Insertar");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText("Nueva Pelicula: ");
+
+        javax.swing.GroupLayout MOD_TABLALayout = new javax.swing.GroupLayout(MOD_TABLA.getContentPane());
+        MOD_TABLA.getContentPane().setLayout(MOD_TABLALayout);
+        MOD_TABLALayout.setHorizontalGroup(
+            MOD_TABLALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MOD_TABLALayout.createSequentialGroup()
+                .addGroup(MOD_TABLALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MOD_TABLALayout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MOD_TABLALayout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addComponent(cb_mo, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(237, 237, 237))
+        );
+        MOD_TABLALayout.setVerticalGroup(
+            MOD_TABLALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MOD_TABLALayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(MOD_TABLALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(cb_mo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel23.setText("Agregar Una nueva Direccion ");
@@ -933,6 +1074,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         jTextArea5.setColumns(20);
+        jTextArea5.setForeground(new java.awt.Color(255, 102, 255));
         jTextArea5.setRows(5);
         jTextArea5.setText("Intrucciones: Si desea ejercutar una lista ya creada \nusted debe se seleccionar la direccion de esa lista \n\n- Si usted quiere meter informacion a un archivo TXT \ndebera crearlo y luego pasar la direccion de el para poder\ntrabajar sobre el doc");
         jTextArea5.setEnabled(false);
@@ -1017,6 +1159,15 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem10);
 
+        jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem13.setText("Tabla");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem13);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -1089,11 +1240,13 @@ public class Main extends javax.swing.JFrame {
             programas pro = new programas(nombre, puntuacion, year_lanzamiento, tipo, genero);
             DefaultComboBoxModel pelis = (DefaultComboBoxModel) jb_agregar_peli.getModel();            
             pelis.addElement(pro);
-         
             
             jb_agregar_peli.setModel(pelis);
             cb_mod.setModel(pelis);
             cb_Jtree.setModel(pelis);
+            cb_tb_pelis.setModel(pelis);
+            cb_mo.setModel(pelis);
+            cb_mod.setModel(pelis);
             JOptionPane.showMessageDialog(this, "Agregado Correctamente");
             jS_puntuacion.setValue(0);
             jt_nombre.setText("");
@@ -1106,7 +1259,6 @@ public class Main extends javax.swing.JFrame {
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -1348,7 +1500,12 @@ String ac = "";
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        moode();
+
+        if (jTextField4.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Seleccione un indice");
+        } else {
+            moode();
+        }
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -1394,21 +1551,21 @@ String ac = "";
         } else {
 
             try {
-                
+
                 int indice = Integer.parseInt(jTextField4.getText());
                 ListModel d = jList2.getModel();
                 ArrayList<programas> t = new ArrayList();
                 for (int i = 0; i < d.getSize(); i++) {
                     t.add((programas) d.getElementAt(i));
                 }
-                String nombre = jTextField5.getText();                
-                claudilist clau = new claudilist(nombre);                
+                String nombre = jTextField5.getText();
+                claudilist clau = new claudilist(nombre);
                 clau.setProgra(t);
                 admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
                 admi.cargarArchivo();
                 admi.getLista_claus().set(indice, clau);
                 admi.escribeArchivo();
-                
+                JOptionPane.showMessageDialog(this, "Agregado");
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "ERROR");
@@ -1602,6 +1759,70 @@ String ac = "";
         
     }//GEN-LAST:event_jTree1MouseClicked
 
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        // TODO add your handling code here:
+                frame_tabla();
+
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+try{        programas x = (programas) cb_tb_pelis.getSelectedItem();        
+        
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();        
+        Object[] row = {x.getNombre(), x.getGenero(), x.getYear_lanzamiento(), x.getPuntuacion()};
+        
+        model.addRow(row);
+        jTable1.setModel(model);
+} catch(Exception e ){JOptionPane.showMessageDialog(this, "ERROR");}    
+
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+try {        DefaultTableModel model = (DefaultTableModel) jTable1.getModel(); 
+        model.removeRow(jTable1.getSelectedRow());
+        jTable1.setModel(model);
+} catch(Exception e){JOptionPane.showMessageDialog(this, "ERROR");}   
+                
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        // TODO add your handling code here:
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pelicula", "Genero", "Año", "Calificacion"
+            }
+        ));
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        // TODO add your handling code here:
+        frame_modificar_tabla();
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        // TODO add your handling code here:
+        // String nombre = 
+        
+        programas o =  (programas) cb_mo.getSelectedItem(); 
+        
+        try {        DefaultTableModel model = (DefaultTableModel) jTable1.getModel(); 
+        model.removeRow(jTable1.getSelectedRow());
+        jTable1.setModel(model);
+} catch(Exception e){JOptionPane.showMessageDialog(this, "ERROR");}   
+        
+        try { DefaultTableModel models = (DefaultTableModel)jTable1.getModel(); 
+        Object [] row = {o.getNombre(),o.getGenero(),o.getYear_lanzamiento(),o.getPuntuacion()}; 
+        models.addRow(row);
+        jTable1.setModel(models);
+        } catch(Exception e){JOptionPane.showMessageDialog(this, "ERROR");}
+        
+    }//GEN-LAST:event_jButton23ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1706,8 +1927,23 @@ String ac = "";
         JTree_parte.setLocationRelativeTo(this);
         JTree_parte.setVisible(true);
     }
-    
- DefaultMutableTreeNode nodo_seleccionado; 
+        public void frame_tabla() {
+        //abrir_archivo.dispose();
+        Tabla.pack();
+        Tabla.setModal(true);
+        Tabla.setLocationRelativeTo(this);
+        Tabla.setVisible(true);
+    }
+
+    public void frame_modificar_tabla() {
+        //abrir_archivo.dispose();
+        MOD_TABLA.pack();
+        MOD_TABLA.setModal(true);
+        MOD_TABLA.setLocationRelativeTo(this);
+        MOD_TABLA.setVisible(true);
+    }
+
+    DefaultMutableTreeNode nodo_seleccionado; 
     programas programa_seleccionado; 
     
     private ArrayList<claudilist> lista_claudia = new ArrayList(); 
@@ -1720,13 +1956,17 @@ String ac = "";
     private javax.swing.JDialog Eliminare;
     private javax.swing.JDialog JTree_parte;
     private javax.swing.JPopupMenu List_cla;
+    private javax.swing.JDialog MOD_TABLA;
     private javax.swing.JMenuItem Mod;
     private javax.swing.JDialog Modif;
+    private javax.swing.JDialog Tabla;
     private javax.swing.JDialog abrir_archivo;
     private javax.swing.JComboBox<String> cb_Jtree;
     private javax.swing.JComboBox<String> cb_genero;
     private javax.swing.JComboBox<String> cb_genero1;
+    private javax.swing.JComboBox<String> cb_mo;
     private javax.swing.JComboBox<String> cb_mod;
+    private javax.swing.JComboBox<String> cb_tb_pelis;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1737,7 +1977,12 @@ String ac = "";
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1762,7 +2007,9 @@ String ac = "";
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1777,6 +2024,8 @@ String ac = "";
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -1788,6 +2037,7 @@ String ac = "";
     private javax.swing.JSpinner jS_puntuacion;
     private javax.swing.JSpinner jS_puntuacion1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1796,6 +2046,7 @@ String ac = "";
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
