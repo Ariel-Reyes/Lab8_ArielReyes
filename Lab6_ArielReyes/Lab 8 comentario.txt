@@ -1,0 +1,14 @@
+- Que inciso le toco ? 
+Me toco el inciso 3 y mejorara el programa ya que lo hara mas amigable y entendible 
+
+-Cual es el tema donde usted siente mas debilidad y porque? 
+JTree y la debilidad la siento porque no le preste atencion al tema y no lo estudie 
+
+-Como planea incluirlo ? 
+lo incluire dando una opcion donde se muestre en un ComboBox o JList las lista que hay en la agenda
+y al darle click se pasaran al arbol, y las tablas de una manera similar 
+
+-Comentario-
+Realmente los laboratorios son buenos incluso llegan a ser un gran reto ya que pues hay que leer muy bien
+y el problema es aca hay muchos errores de redaccion en algunos pero quitando eso estan bien geniales 
+ 
