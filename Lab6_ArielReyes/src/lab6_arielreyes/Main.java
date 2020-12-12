@@ -1159,7 +1159,7 @@ public class Main extends javax.swing.JFrame {
         jTextArea5.setColumns(20);
         jTextArea5.setForeground(new java.awt.Color(255, 102, 255));
         jTextArea5.setRows(5);
-        jTextArea5.setText("Intrucciones: Si desea ejercutar una lista ya creada \nusted debe se seleccionar la direccion de esa lista \n\n- Si usted quiere meter informacion a un archivo TXT \ndebera crearlo y luego pasar la direccion de el para poder\ntrabajar sobre el doc");
+        jTextArea5.setText("Intrucciones: Si desea ejercutar una lista ya creada \nusted debe se seleccionar la direccion de esa lista \n\n- Si usted quiere meter informacion a un archivo TXT \ndebera crearlo y luego pasar la direccion de el para poder\ntrabajar sobre el txt");
         jTextArea5.setEnabled(false);
         jScrollPane8.setViewportView(jTextArea5);
 
@@ -1537,7 +1537,7 @@ if(jl_listas.getSelectedIndex() >=0 ){
         /*Con Este boton sacamos toda la informacion del documento de txt seleccionado, y extraemos su lista */
         
         
-        admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
+     try{   admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
         admi.cargarArchivo();
         String st = "";
         st += admi.getLista_claus();
@@ -1545,7 +1545,7 @@ if(jl_listas.getSelectedIndex() >=0 ){
 
         jTextArea1.setText(st);
 
-
+     } catch(Exception e){JOptionPane.showMessageDialog(this, "ERROR");}
 
 
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -1565,26 +1565,11 @@ if(jl_listas.getSelectedIndex() >=0 ){
         /*Con este boton listamos todos  que hay en el text*/
          admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
         admi.cargarArchivo();
+         //admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
+        //admi.cargarArchivo();
         String st = "";
-        //st += admi.getLista_claus();
-        // System.out.println(admi.getLista_claus() + "=====>" + c);
-String ac = "";
-        for (int i = 0; i < admi.getLista_claus().size(); i++) {
-            ac += admi.getLista_claus().get(i) + "\n" + "\n";
-
-        }
-        String aci = "";
-        int cont = 0;
-        int cont2 = 0;
-        for (claudilist c : admi.getLista_claus()) {
-            aci += ")" + c.getNombre() + "\n";
-            cont++;
-
-        }
-
-        jTextArea2.setText(aci);
-
-
+        st += admi.getLista_claus();
+        jTextArea2.setText(st);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -1610,37 +1595,27 @@ String ac = "";
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+try {        // TODO add your handling code here:
 /*Esto abre una pestaña la cual manda a la pestaña de modificar*/ 
         if (jTextField4.getText() == null) {
-            JOptionPane.showMessageDialog(this, "Seleccione un indice");
-        } else {
-            moode();
+                JOptionPane.showMessageDialog(this, "Seleccione un indice");
+            } else {
+                moode();
+            }
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(this, "ERROR");
         }
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-           admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
+        admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
         admi.cargarArchivo();
+         //admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
+        //admi.cargarArchivo();
         String st = "";
-        //st += admi.getLista_claus();
-        // System.out.println(admi.getLista_claus() + "=====>" + c);
-String ac = "";
-        for (int i = 0; i < admi.getLista_claus().size(); i++) {
-            ac += admi.getLista_claus().get(i) + "\n" + "\n";
-
-        }
-        String aci = "";
-        int cont = 0;
-        int cont2 = 0;
-        for (claudilist c : admi.getLista_claus()) {
-            aci += ")" + c.getNombre() + "\n";
-            cont++;
-
-        }
-
-        jTextArea3.setText(aci);
+        st += admi.getLista_claus();
+        jTextArea3.setText(st);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -1694,7 +1669,13 @@ String ac = "";
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        jList2.removeAll();
+        DefaultListModel model = (DefaultListModel) jList2.getModel();        
+        model.clear();
+        jList2.setModel(model);
+        
+        
+        
+        
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -1835,10 +1816,10 @@ String ac = "";
                 // agarramos el nodo seleccionado que es el objeto 
                 nodo_seleccionado = (DefaultMutableTreeNode) obj;
                 // se valida que hayan clientes en el nodo 
-                if (nodo_seleccionado.getUserObject() instanceof programas) {
+                
                     programa_seleccionado = (programas) nodo_seleccionado.getUserObject(); // se pasa a la variable que es persona 
                     Eliminar_Modificar.show(evt.getComponent(), evt.getX(), evt.getY()); // se muestra el menu 
-                }
+                
 
             }
 
@@ -1847,7 +1828,7 @@ String ac = "";
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
-        int delete = JOptionPane.showConfirmDialog(this, "Seguro de eliminar? ", "Confirm", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE); // se manda el mensaje 
+        int delete = 0; // se manda el mensaje ;
         if (delete == JOptionPane.OK_OPTION) { // se confirma la opcion 
             DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();  // se captura el modelo 
             model.removeNodeFromParent(nodo_seleccionado); // se remueve el modelo 

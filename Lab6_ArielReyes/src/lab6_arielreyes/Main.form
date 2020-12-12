@@ -1789,7 +1789,7 @@
               <Color blue="ff" green="66" red="ff" type="rgb"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Intrucciones: Si desea ejercutar una lista ya creada &#xa;usted debe se seleccionar la direccion de esa lista &#xa;&#xa;- Si usted quiere meter informacion a un archivo TXT &#xa;debera crearlo y luego pasar la direccion de el para poder&#xa;trabajar sobre el doc"/>
+            <Property name="text" type="java.lang.String" value="Intrucciones: Si desea ejercutar una lista ya creada &#xa;usted debe se seleccionar la direccion de esa lista &#xa;&#xa;- Si usted quiere meter informacion a un archivo TXT &#xa;debera crearlo y luego pasar la direccion de el para poder&#xa;trabajar sobre el txt"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>

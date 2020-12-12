@@ -58,12 +58,12 @@ public class admi_claudia_lista {
             for (claudilist c : lista_claus) {
                 bw.write(c.getNombre() );
                 for (programas z : c.getProgra()) {
-                    bw.write(z.getNombre() + "/");
+                    bw.write(z.getNombre() + ":" + "/");
                     bw.write(z.getGenero() + "/");
                     bw.write(z.getPuntuacion() + "/");
                     bw.write(z.getTipo() + "/");
                     bw.write(z.getYear_lanzamiento() + "/");
-                    
+                    bw.write("\n");
 
                 }
 
