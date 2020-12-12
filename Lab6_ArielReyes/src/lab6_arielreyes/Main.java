@@ -180,7 +180,6 @@ public class Main extends javax.swing.JFrame {
         jButton22 = new javax.swing.JButton();
         jScrollPane11 = new javax.swing.JScrollPane();
         jTextArea6 = new javax.swing.JTextArea();
-        jTextField7 = new javax.swing.JTextField();
         MOD_TABLA = new javax.swing.JDialog();
         jButton23 = new javax.swing.JButton();
         cb_mo = new javax.swing.JComboBox<>();
@@ -1012,8 +1011,6 @@ public class Main extends javax.swing.JFrame {
         jTextArea6.setEnabled(false);
         jScrollPane11.setViewportView(jTextArea6);
 
-        jTextField7.setText("jTextField7");
-
         javax.swing.GroupLayout TablaLayout = new javax.swing.GroupLayout(Tabla.getContentPane());
         Tabla.getContentPane().setLayout(TablaLayout);
         TablaLayout.setHorizontalGroup(
@@ -1037,15 +1034,9 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(2, 2, 2)
-                .addGroup(TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TablaLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaLayout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         TablaLayout.setVerticalGroup(
             TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1063,8 +1054,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                     .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1111,7 +1101,7 @@ public class Main extends javax.swing.JFrame {
         jTextArea8.setColumns(20);
         jTextArea8.setForeground(new java.awt.Color(255, 0, 0));
         jTextArea8.setRows(5);
-        jTextArea8.setText("1) Para poder usar los archivos de texto debe de cargar primero \nsu hubicacion con el boton del inicio \n\n2) Para poder crear un doc.txt debe de crearlo primero vacio \ny luego cargarlo \n\n3) Tiene que guardar el archivo con la extension txt \n");
+        jTextArea8.setText("1) Para poder usar los archivos de texto debe de cargar primero \nsu hubicacion con el boton del inicio \n\n2) Para poder crear un doc.txt debe de crearlo primero vacio \ny luego cargarlo con el boton para agregar directorio del inicio\n\n3) Tiene que guardar el archivo con la extension txt \n");
         jTextArea8.setEnabled(false);
         jScrollPane13.setViewportView(jTextArea8);
 
@@ -1126,12 +1116,12 @@ public class Main extends javax.swing.JFrame {
             .addGroup(ayudaLayout.createSequentialGroup()
                 .addGroup(ayudaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ayudaLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(ayudaLayout.createSequentialGroup()
                         .addGap(233, 233, 233)
-                        .addComponent(jLabel26)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                        .addComponent(jLabel26))
+                    .addGroup(ayudaLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         ayudaLayout.setVerticalGroup(
             ayudaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1575,16 +1565,19 @@ if(jl_listas.getSelectedIndex() >=0 ){
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
  /*Cargamos el archivo del path, y luego de esto le pasamos el indice que selecciono la persona y utilizamos remove para sacarlo de nuestros archivos, y limpiamos el TextArea*/
-        admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
+try {        admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
         int indice = Integer.parseInt(jTextField3.getText());
-        admi.cargarArchivo();
-        admi.getLista_claus().remove(indice);
-        JOptionPane.showMessageDialog(this, "Eliminado");
-        jTextArea2.setText("");
-        try {
-            admi.escribeArchivo();
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            admi.cargarArchivo();
+            admi.getLista_claus().remove(indice);
+            JOptionPane.showMessageDialog(this, "Eliminado");
+            jTextArea2.setText("");
+            try {
+                admi.escribeArchivo();
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "ERROR");
         }
 
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -1609,25 +1602,30 @@ try {        // TODO add your handling code here:
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
+try {        admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
         admi.cargarArchivo();
          //admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
         //admi.cargarArchivo();
         String st = "";
         st += admi.getLista_claus();
         jTextArea3.setText(st);
+} catch(Exception e){
+    JOptionPane.showMessageDialog(this, "ERROR");
+
+}
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
         /*Este boton manda del ComboBox al JList creando el modelo del box creamos el modelo de la lista y le pasamos el item seleccionado en el combobox */
-         DefaultComboBoxModel model_combo = (DefaultComboBoxModel) cb_mod.getModel();
+       try {  DefaultComboBoxModel model_combo = (DefaultComboBoxModel) cb_mod.getModel();
         DefaultListModel model_lista = (DefaultListModel) jList2.getModel();
         programas persona = (programas) cb_mod.getSelectedItem();
         model_lista.addElement(persona);
         jList2.setModel(model_lista);
        
         cb_mod.setModel(model_combo);
+       } catch(Exception e){JOptionPane.showMessageDialog(this, "ERROR");}
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -1639,7 +1637,7 @@ try {        // TODO add your handling code here:
         
         */
 
-        if (jTextField4 == null) {
+    try{    if (jTextField4 == null) {
             JOptionPane.showMessageDialog(this, "ERROR");
         } else {
 
@@ -1655,24 +1653,27 @@ try {        // TODO add your handling code here:
                 claudilist clau = new claudilist(nombre);
                 clau.setProgra(t);
                 admi_claudia_lista admi = new admi_claudia_lista(jTextField6.getText());
-                admi.cargarArchivo();
-                admi.getLista_claus().set(indice, clau);
-                admi.escribeArchivo();
-                JOptionPane.showMessageDialog(this, "Agregado");
+                    admi.cargarArchivo();
+                    admi.getLista_claus().set(indice, clau);
+                    admi.escribeArchivo();
+                    JOptionPane.showMessageDialog(this, "Modificar");
 
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "ERROR");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(this, "ERROR");
+                }
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "ERROR");
         }
 
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        DefaultListModel model = (DefaultListModel) jList2.getModel();        
+  try {      DefaultListModel model = (DefaultListModel) jList2.getModel();        
         model.clear();
         jList2.setModel(model);
-        
+  } catch(Exception e){JOptionPane.showMessageDialog(this, "ERROR");}
         
         
         
@@ -1706,7 +1707,7 @@ try {        // TODO add your handling code here:
                 }
             }
         } catch (Exception e) {
-
+JOptionPane.showMessageDialog(this, "ERROR");
         }
 
 
@@ -1742,14 +1743,14 @@ try {        // TODO add your handling code here:
                 bw.flush();
                 JOptionPane.showMessageDialog(this, "TEXTO AGREGADO");
             } catch(Exception e){
-
+JOptionPane.showMessageDialog(this, "ERROR");
             }
         }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
-        JFileChooser filecho = new JFileChooser();
+     try{   JFileChooser filecho = new JFileChooser();
        
         int seleccion = filecho.showOpenDialog(this);
         
@@ -1757,6 +1758,9 @@ try {        // TODO add your handling code here:
         
        
         jTextField6.setText( dir.getAbsolutePath());
+     } catch(Exception e){
+         JOptionPane.showMessageDialog(this, "ERROR");
+     }
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
@@ -1773,7 +1777,7 @@ try {        // TODO add your handling code here:
         5) Mandamos todo y cerramos el modelo poniendo    tree_model.reload();
         
         */
-        DefaultTreeModel tree_model = (DefaultTreeModel) jTree1.getModel();
+      try{   DefaultTreeModel tree_model = (DefaultTreeModel) jTree1.getModel();
         DefaultMutableTreeNode model_raiz = (DefaultMutableTreeNode) tree_model.getRoot();
 
         programas g = (programas) cb_Jtree.getSelectedItem();
@@ -1794,7 +1798,9 @@ try {        // TODO add your handling code here:
         }
         tree_model.reload();
 
-
+      } catch(Exception e){
+          JOptionPane.showMessageDialog(this, "ERROR");
+      }
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
@@ -1804,7 +1810,7 @@ try {        // TODO add your handling code here:
 
     private void jTree1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTree1MousePressed
         // TODO add your handling code here:
- if(evt.isMetaDown()){
+ try {if(evt.isMetaDown()){
        
            if (evt.isMetaDown()) {
                // aca capturamos la fila mas cercana a donde se hace click 
@@ -1824,17 +1830,20 @@ try {        // TODO add your handling code here:
             }
 
         }
+ } catch(Exception e){JOptionPane.showMessageDialog(this, "ERROR");}
     }//GEN-LAST:event_jTree1MousePressed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
-        int delete = 0; // se manda el mensaje ;
+      try{   int delete = 0; // se manda el mensaje ;
         if (delete == JOptionPane.OK_OPTION) { // se confirma la opcion 
             DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();  // se captura el modelo 
             model.removeNodeFromParent(nodo_seleccionado); // se remueve el modelo 
             model.reload(); // se manda la imagen 
         }
-
+      } catch(Exception e){
+          JOptionPane.showMessageDialog(this, "ERROR");
+      }
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jTree1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTree1MouseClicked
@@ -2191,7 +2200,6 @@ try {        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTree jTree1;
     private javax.swing.JComboBox<String> jb_agregar_peli;
     private javax.swing.JRadioButton jb_anime;

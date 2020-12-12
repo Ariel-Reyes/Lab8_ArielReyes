@@ -1301,18 +1301,9 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane11" min="-2" pref="270" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                          <Component id="jTextField7" min="-2" pref="98" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jScrollPane11" min="-2" pref="270" max="-2" attributes="0"/>
+                  <EmptySpace pref="46" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1336,8 +1327,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jTextField7" min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="jButton19" max="32767" attributes="0"/>
+                      <Component id="jButton19" pref="45" max="32767" attributes="0"/>
                       <Component id="jButton20" alignment="0" max="32767" attributes="0"/>
                       <Component id="jButton21" alignment="0" max="32767" attributes="0"/>
                       <Component id="jButton22" alignment="0" max="32767" attributes="0"/>
@@ -1439,11 +1429,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="jTextField7">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField7"/>
-          </Properties>
-        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="MOD_TABLA">
@@ -1517,15 +1502,15 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="jScrollPane13" min="-2" pref="497" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="233" max="-2" attributes="0"/>
                           <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="jScrollPane13" min="-2" pref="497" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                  <EmptySpace pref="56" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1556,7 +1541,7 @@
                   <Color blue="0" green="0" red="ff" type="rgb"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="1) Para poder usar los archivos de texto debe de cargar primero &#xa;su hubicacion con el boton del inicio &#xa;&#xa;2) Para poder crear un doc.txt debe de crearlo primero vacio &#xa;y luego cargarlo &#xa;&#xa;3) Tiene que guardar el archivo con la extension txt &#xa;"/>
+                <Property name="text" type="java.lang.String" value="1) Para poder usar los archivos de texto debe de cargar primero &#xa;su hubicacion con el boton del inicio &#xa;&#xa;2) Para poder crear un doc.txt debe de crearlo primero vacio &#xa;y luego cargarlo con el boton para agregar directorio del inicio&#xa;&#xa;3) Tiene que guardar el archivo con la extension txt &#xa;"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
